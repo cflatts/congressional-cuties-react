@@ -4,7 +4,17 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 
 
+
 const app = function() {
+
+    var Collection = Backbone.Collection.extend({
+        url: 'https://congress.api.sunlightfoundation.com/legislators?per_page=all&apikey=',
+        _key: '0e85724a8f924c6aba8bd576df364eb7',
+
+        parse: function(apiResponse) {
+            return apiResponse.results
+        }
+    })
 
 	const Header = React.createClass({
 		render: () => {
