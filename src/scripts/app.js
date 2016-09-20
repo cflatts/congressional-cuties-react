@@ -29,13 +29,12 @@ const app = function() {
         }
     })
 
-	const Header = React.createClass({
-		render: () => {
-			return <h1>YOLO</h1>
-		}
-	})
-
-	ReactDOM.render(<Header/>,document.querySelector('.container'))
+    var Router = Backbone.Router.extend({
+        routes: {
+            'home': 'showHomeView',
+            '*default': 'backToHome'
+        }
+    })
 }
 
 app()
