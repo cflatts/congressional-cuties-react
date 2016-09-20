@@ -33,6 +33,16 @@ const app = function() {
         routes: {
             'home': 'showHomeView',
             '*default': 'backToHome'
+        },
+
+        showHomeView: function() {
+            var coll = new Collection()
+
+            coll.fetch({
+                data: {
+
+                }
+            })
         }
     })
 }
