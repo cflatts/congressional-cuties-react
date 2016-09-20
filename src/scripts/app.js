@@ -16,6 +16,19 @@ const app = function() {
         }
     })
 
+    var Model = Backbone.Model.extend({
+        url: 'https://congress.api.sunlightfoundation.com/legislators?per_page=all&apikey=',
+        _key: '0e85724a8f924c6aba8bd576df364eb7',
+
+        parse: function(apiResponse) {
+            return apiResponse.results
+        }
+
+        initialize: function(id) {
+            this.id = id
+        }
+    })
+
 	const Header = React.createClass({
 		render: () => {
 			return <h1>YOLO</h1>
